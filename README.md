@@ -1,2 +1,3 @@
 # DelayTools
- A package for the analysis of delay equations in Maple
+A Maple library for the analysis of delay equations
+
