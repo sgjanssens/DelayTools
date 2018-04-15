@@ -3,7 +3,9 @@ A Maple package for the analysis of delay equations
 
 ## Description
 
-In this package I collect a number of Maple procedures that I have found useful for symbolic and numerical analysis of delayed dynamical systems. For now, the focus is on local stability and bifurcation in so-called classical *delay differential equations*. The aim is to extend the coverage to other types of delay equations such as purely functional (renewal) equations and mixed systems.
+In this package I collect a number of Maple procedures that I have found useful for symbolic analysis of delayed dynamical systems. It can also be used for code generation for third party numerical software such as MATLAB. 
+
+For now, the focus is on local stability and bifurcation in so-called classical *delay differential equations*, but the package structure is such that it can be extended with relative ease to cover additional types of delay equations such as purely functional (renewal) equations and mixed systems.
 
 ## Installation
 1. Use Maple to open, edit (if necessary) and run the `build.mpl` file contained in the repository root.
@@ -11,6 +13,8 @@ In this package I collect a number of Maple procedures that I have found useful 
 1. Exit, restart and test for success by entering `with(DelayTools)` at the prompt.
 
 Please let me know if you encounter difficulties.
+
+To uninstall, remove `DelayTools.mla` from the directory `destdir` as defined in `build.mpl`.
 
 ## Usage
 Documentation and examples will be made available [on my site](http://sebastiaanjanssens.nl/delay/) where LaTeX is more easily used.
