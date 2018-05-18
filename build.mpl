@@ -22,9 +22,12 @@ rootdir := "/home/sj/DelayTools":
 
 # The subdirectory containing the Maple language source files.
 srcdir := cat(rootdir, kernelopts(dirsep), "src"):
-read cat(srcdir, kernelopts(dirsep), "DelayTools.mpl"):
+olddir := currentdir(srcdir):
+read ("DelayTools.mpl"):
+currentdir(olddir):
 
 # Save the library.
 archname := cat(destdir, kernelopts(dirsep), "DelayTools.mla"):
 LibraryTools:-Save('DelayTools', archname):
+
 
