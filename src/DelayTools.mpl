@@ -5,12 +5,13 @@ DelayTools := module()
     export mlindex, mldiff, DDE;
 
 
-$include "DDE.mm"
+$include "DDE.mpl"
 
 
     mlindex := proc(d::posint, r::posint, $)::listlist;
-        (* Recursively build a list containing d^r sublists. Each of these sublists is
-        of the form [i[1],..,i[r]] where every element is in the range 1..d. *)
+        # Recursively build a list containing d^r sublists. Each of
+        # these sublists is of the form [i[1],..,i[r]] where every
+        # element is in the range 1..d.
 
         option remember;
         local i, j;
@@ -23,10 +24,11 @@ $include "DDE.mm"
     end proc;
 
 
-    mldiff := proc(f::operator, r::posint, v::list, $)::Vector;
-        (* Calculate the derivative of order r of the function f, at the origin,
-        and apply the resulting r-linear form to v. If kernelopts(assertlevel)
-        is non-zero, it is checked that v indeed has r elements. *)
+    mldiff := proc(f, r::posint, v::list, $)::Vector;
+        # Calculate the derivative of order r of the function f, at
+        # the origin, and apply the resulting r-linear form to v.
+        # If kernelopts(assertlevel) is non-zero, it is checked that v
+        # indeed has r elements.
 
         local d, idx, i, s;
 
