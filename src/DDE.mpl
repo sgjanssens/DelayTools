@@ -9,10 +9,11 @@ DDE := module()
         # side of the DDE to the standard functional form f that is
         # suitable as input for the other procedures.
 
-        local fargs;
+        local s, fexpr;
 
-        fargs := [seq(seq(v(t - tau), v in vars), tau in delays)];
-        unapply(sys, map(convert, fargs, 'name'));
+        s := [seq(seq(v(t - tau) = cat(v, tau), v in vars), tau in delays)];
+        fexpr := map2(applyrule, s, ddesys);
+        return unapply(fexpr, map2(op, 2, s));
     end proc;
 
 
@@ -36,6 +37,5 @@ DDE := module()
 
         return mldiff(f, r, map(E, argfuncs));
     end proc;
-
 
 end module;
