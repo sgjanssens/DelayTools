@@ -25,4 +25,5 @@ For academic use you are kindly requested to cite:
 S.G. Janssens, *On a Normalization Technique for Codimension Two Bifurcations of Equilibria of Delay Differential Equations*, Master Thesis, Utrecht University, 2010, updates and corrections via http://delayequations.net.
 
 ## License
-This project uses the BSD 3-Clause License. The license text can be found in the file LICENSE in the repository root directory. 
+The license text can be found in the file LICENSE in the repository root directory. Also, each source file contains a license notice.
+
