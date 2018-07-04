@@ -17,8 +17,9 @@
 
 
 DDE := module()
-    option package;
-    export sys_to_f, eval_at_delays, diff_at_zero, char_matrix;
+option package;
+
+export sys_to_f, eval_at_delays, diff_at_zero, char_matrix;
 
 
     sys_to_f := proc(sys, vars::list, delays::list)::list;
@@ -27,7 +28,7 @@ DDE := module()
         # input for the other procedures. The output is a list of
         # component functions.
 
-        local s, fexpr, new_vars;
+    local s, fexpr, new_vars;
 
         s := [seq(seq(v(t - tau) = cat(v, tau), v in vars), tau in delays)];
         fexpr := map2(applyrule, s, sys);
@@ -43,7 +44,7 @@ DDE := module()
         # in column-major order as a flattened list. This makes it
         # easier to use the result as input for function evaluation.
 
-        local phi_at_delays;
+    local phi_at_delays;
 
         phi_at_delays := map(phi, -delays);
         return map(op, map(convert, phi_at_delays, 'list'));
@@ -67,8 +68,8 @@ DDE := module()
         # become row vectors in the Matrix constructor, we need to do
         # a transposition at the end.
 
-        uses LinearAlgebra;
-        local d, n, z, psi, L;
+    uses LinearAlgebra;
+    local d, n, z, psi, L;
 
         # Recover the system dimension n from f.
         n := numelems(f);

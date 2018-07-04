@@ -16,17 +16,27 @@
 # along with DelayTools. If not, see <https://www.gnu.org/licenses/>.
 
 
-DelayTools := module()
-option package;
+utils := module()
 
 
-export DDE;
-local derivatives, utils;
+export number_of_args;
 
 
-$include "DDE.mpl"
-$include "derivatives.mpl"
-$include "utils.mpl"
+    number_of_args := proc(f::list, $)::posint;
+    option remember;
+        # Compute the number of arguments of f, where f is assumed to
+        # have the form of a list of component functions. Check that
+        # all component functions have an equal number of arguments.
+
+    local component_args;
+
+        component_args := {'[op(1, f[j])]' $ j = 1..numelems(f)};
+        if numelems(component_args) > 1 then
+            error("Components of f must all have equal number of arguments");
+        end;
+
+        return numelems(component_args[1]);
+    end
 
 
 end module;
