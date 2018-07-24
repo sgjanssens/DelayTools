@@ -1,5 +1,7 @@
 # Indexing and storage of higher dimensional symmetric Arrays in Maple
 
+(Use a MathJax-enabling plugin such as [this one](https://github.com/emichael/texthings) for formula rendering.)
+
 ## Description
 
 Derivatives beyond second order are typically not required when solving local stability and optimization problems. However, local normal forms for ordinary differential equations *do* involve higher order derivatives. For instance, already the computation of the first Lyapunov coefficient in the ubiquitous [Hopf bifurcation](http://www.scholarpedia.org/article/Andronov-Hopf_bifurcation) requires derivatives of order three.
