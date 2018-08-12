@@ -20,14 +20,14 @@ In Maple, I would be inclined to declare a higher dimensional symmetric Array as
 d := 10: r := 5
 Array(symmetric, (1..d)$r);
 ```
-but at present this does not work, see [this thread](https://mapleprimes.com/questions/225188-Indexing-And-Storage-Of-Higher-Dimensional) on MaplePrimes. I thank the respondents in that thread - and [vv](https://mapleprimes.com/users/vv/) in particular - for suggesting to use sparse storage instead of symmetric storage. In this directory you find my rudimentary implementation and some test results.
+but at present this does not work, see [this thread](https://mapleprimes.com/questions/225188-Indexing-And-Storage-Of-Higher-Dimensional) on MaplePrimes. I thank the respondents - and [vv](https://mapleprimes.com/users/vv/) in particular - for suggesting to use sparse storage instead of symmetric storage. In this directory you find my rudimentary implementation and some test results.
 
 ## Installation and usage
 Assuming you run Maple in this directory, read the procedures into the current session
 ```
 read "array-indexing.mpl";
 ```
-and compare standard rectangular indexing and storage with custum symmetric indexing and sparse storage by running
+and compare standard rectangular indexing and storage with custom symmetric indexing and sparse storage by running
 ```
 read "tests.mpl";
 ```
